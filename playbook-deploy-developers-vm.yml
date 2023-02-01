@@ -47,6 +47,14 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
+  - name: Create directory /bin/git
+    file:
+        path: /home/developer/bin/git
+        state: directory
+        owner: developer
+        group: developer
+        mode: 0775
+
   - name: Create a symbolic link to GIT
     file:
         src: /usr/bin/git
