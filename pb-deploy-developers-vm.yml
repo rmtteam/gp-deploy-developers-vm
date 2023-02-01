@@ -1,0 +1,51 @@
+---
+- name: Deploy developers VM
+  hosts: all
+  become: yes
+
+  vars:
+    vaulted_password:
+
+  tasks:
+
+  - name: Install some system tools
+    ansible.builtin.apt:
+       name:
+          - htop
+          - mc
+          - net-tools
+       state: latest
+       update_cache: true
+
+  - name: Install DotNetCore 5.0
+    ansible.builtin.snap:
+       name: dotnet-sdk
+       channel: 5.0
+       classic: yes
+       state: present
+
+  - name: Replace sftp config
+    ansible.builtin.replace:
+        path: /etc/ssh/sshd_config
+        regexp: '(^Subsystem sftp\s)(.*)$'
+        replace: 'Subsystem sftp internal-sftp -P read, remove'
+
+  - name: Restart sshd
+    service:
+        name: ssh
+        state: restarted
+
+  - name: Add a group Developer
+    group:
+        name: developer
+        state: present
+
+  - name: Add a user Developer
+    user:
+        name: developer
+        password: $6$dZjGIVaxZmY7$lr8NX9BARnkklMWcgcXvZ4KHK7Oc4JHqxPAR./St7hEDv8lhwV7WtrguIfnJVwYsAh8jbj3K.xBu2GWGSxmX50
+        shell: /bin/bash
+        update_password: on_create
+        groups: developer
+        append: yes
+        # mkpasswd --method=sha-512 LvHgB7l5XQ8K
