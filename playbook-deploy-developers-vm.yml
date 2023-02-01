@@ -47,7 +47,7 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-    - name: Create a symbolic link to GIT
+  - name: Create a symbolic link to GIT
     file:
         src: /usr/bin/git
         dest: /home/developer/bin/git
