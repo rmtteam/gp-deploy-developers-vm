@@ -47,9 +47,9 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-  - name: Create directory /bin/git
+  - name: Create directory /bin
     file:
-        path: /home/developer/bin/git
+        path: /home/developer/bin
         state: directory
         owner: developer
         group: developer
