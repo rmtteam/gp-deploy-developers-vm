@@ -37,8 +37,13 @@
         repo: 'https://github.com/ghantoos/lshell.git'
         dest: /usr/src/lshell
 
-  - name: Install lshell
-    ansible.builtin.shell: "python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
+  - name: Copy file with owner and permissions
+    ansible.builtin.copy:
+        src: /lshell.sh
+        dest: /usr/src/lshell.sh
+
+  #- name: Install lshell
+  #  ansible.builtin.command: "python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
 
   - name: Add a group Developer
     group:
