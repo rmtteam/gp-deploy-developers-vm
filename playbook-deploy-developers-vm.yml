@@ -37,8 +37,8 @@
         repo: 'https://github.com/ghantoos/lshell.git'
         dest: /usr/src/lshell
 
-  - name: Run install lshell script
-    ansible.builtin.command: "/usr/bin/python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
+  - name: Run install lshell
+    command: "/usr/bin/python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
 
   - name: Add a group Developer
     group:
