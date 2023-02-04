@@ -70,3 +70,11 @@
         owner: developer
         group: developer
         state: link
+
+  - name: Create a symbolic link to uname
+    file:
+        src: /usr/bin/uname
+        dest: /home/developer/bin/uname
+        owner: developer
+        group: developer
+        state: link
