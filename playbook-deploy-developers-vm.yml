@@ -57,6 +57,12 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
+    - name: Create a directory if it does not exist
+    file:
+      path: /home/developer/bin
+      state: directory
+      mode: '0755'
+
   - name: Create a symbolic link to git
     file:
         src: /usr/bin/git
