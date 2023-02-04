@@ -11,7 +11,6 @@
           - htop
           - mc
           - net-tools
-          - lshell
        state: latest
        update_cache: true
 
@@ -32,6 +31,11 @@
     service:
         name: ssh
         state: restarted
+
+  - name: Install lshell
+    ansible.builtin.git:
+        repo: 'https://github.com/ghantoos/lshell.git'
+        dest: /usr/src/
 
   - name: Add a group Developer
     group:
