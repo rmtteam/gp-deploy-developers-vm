@@ -78,3 +78,11 @@
         owner: developer
         group: developer
         state: link
+
+  - name: Create a symbolic link to echo
+    file:
+        src: /usr/bin/echo
+        dest: /home/developer/bin/echo
+        owner: developer
+        group: developer
+        state: link
