@@ -63,10 +63,10 @@
         group: developer
         mode: 0775
 
-  - name: Create a symbolic link to GIT
-    file:
-        src: /usr/bin/git
-        dest: /home/developer/bin/git
-        owner: developer
-        group: developer
-        state: link
+#  - name: Create a symbolic link to git
+#    file:
+#        src: /usr/bin/git
+#        dest: /home/developer/bin/git
+#        owner: developer
+#        group: developer
+#        state: link
