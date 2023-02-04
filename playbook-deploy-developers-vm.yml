@@ -11,7 +11,7 @@
           - htop
           - mc
           - net-tools
-          - rush
+          - rssh
        state: latest
        update_cache: true
 
