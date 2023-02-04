@@ -46,12 +46,21 @@
     shell:
         "cd /usr/src/lshell &&  /usr/bin/python3 setup.py install --no-compile --install-scripts=/usr/bin/"
 
-  - name: Create directory /bin
+
+  - name: Create directory /etc/lshell.d
     file:
         path: /etc/lshell.d
         state: directory
-        owner: developer
-        group: developer
+        owner: root
+        group: root
+        mode: 0775
+
+  - name: Create directory /var/log/lshell
+    file:
+        path: /var/log/lshell
+        state: directory
+        owner: root
+        group: root
         mode: 0775
 
   - name: Copy lshell config
