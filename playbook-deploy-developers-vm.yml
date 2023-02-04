@@ -11,6 +11,7 @@
           - htop
           - mc
           - net-tools
+          - lshell
        state: latest
        update_cache: true
 
