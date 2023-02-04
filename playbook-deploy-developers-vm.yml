@@ -38,10 +38,6 @@
         repo: 'https://github.com/rmtteam/gp-deploy-developers-vm.git'
         dest: /usr/src/gp-deploy-developers-vm
 
-  - name: Copy .bash_profile to home folder
-    shell:
-          "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
-
   - name: Add a group Developer
     group:
         name: developer
@@ -62,6 +58,10 @@
         path: /home/developer/bin
         state: directory
         mode: '0755'
+
+  - name: Copy .bash_profile to home folder
+    shell:
+          "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
 
   - name: Create a symbolic link to git
     file:
