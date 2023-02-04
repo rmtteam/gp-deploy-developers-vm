@@ -37,11 +37,11 @@
         repo: 'https://github.com/ghantoos/lshell.git'
         dest: /usr/src/lshell
 
-  - name: Copy file with owner and permissions
+  - name: Copy install script
     ansible.builtin.copy:
         src: /lshell.sh
         dest: /usr/src/lshell.sh
-        
+
   #- name: Install lshell
   #  ansible.builtin.command: "python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
 
