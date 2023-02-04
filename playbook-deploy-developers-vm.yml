@@ -46,9 +46,21 @@
     shell:
         "cd /usr/src/lshell &&  /usr/bin/python3 setup.py install --no-compile --install-scripts=/usr/bin/"
 
+  - name: Create directory /bin
+    file:
+        path: /etc/lshell.d
+        state: directory
+        owner: developer
+        group: developer
+        mode: 0775
+
   - name: Copy lshell config
     shell:
         "cp /usr/src/gp-deploy-developers-vm/lshell.conf /etc/lshell.conf"
+
+  - name: Copy lshell config
+    shell:
+        "cp /usr/src/gp-deploy-developers-vm/gp_allowed_commands.conf /etc/lshell.d/gp_allowed_commands.conf"
 
   - name: Add a group Developer
     group:
@@ -67,13 +79,6 @@
 
 
 
-  #- name: Create directory /bin
-  #  file:
-  #      path: /home/developer/bin
-  #      state: directory
-  #      owner: developer
-  #      group: developer
-  #      mode: 0775
 
 #  - name: Create a symbolic link to git
 #    file:
