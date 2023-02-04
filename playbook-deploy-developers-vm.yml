@@ -11,7 +11,7 @@
           - htop
           - mc
           - net-tools
-          - mysecureshell
+          - busybox
        state: latest
        update_cache: true
 
