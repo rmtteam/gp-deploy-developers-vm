@@ -50,19 +50,19 @@
     user:
         name: developer
         password: $6$dZjGIVaxZmY7$lr8NX9BARnkklMWcgcXvZ4KHK7Oc4JHqxPAR./St7hEDv8lhwV7WtrguIfnJVwYsAh8jbj3K.xBu2GWGSxmX50
-        shell: /bin/rbash
+        shell: /usr/bin/lshell
         update_password: on_create
         groups: developer
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-  - name: Create directory /bin
-    file:
-        path: /home/developer/bin
-        state: directory
-        owner: developer
-        group: developer
-        mode: 0775
+  #- name: Create directory /bin
+  #  file:
+  #      path: /home/developer/bin
+  #      state: directory
+  #      owner: developer
+  #      group: developer
+  #      mode: 0775
 
 #  - name: Create a symbolic link to git
 #    file:
