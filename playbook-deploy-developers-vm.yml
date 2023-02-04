@@ -39,7 +39,8 @@
         dest: /usr/src/gp-deploy-developers-vm
 
   - name: Copy .bash_profile to home folder
-    ansible.builtin.shell: "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
+    shell:
+          "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
 
   - name: Add a group Developer
     group:
