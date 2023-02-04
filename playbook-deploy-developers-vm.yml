@@ -11,6 +11,7 @@
           - htop
           - mc
           - net-tools
+          - rush
        state: latest
        update_cache: true
 
@@ -32,44 +33,11 @@
         name: ssh
         state: restarted
 
-  - name: Clone lshell from github
-    ansible.builtin.git:
-        repo: 'https://github.com/ghantoos/lshell.git'
-        dest: /usr/src/lshell
-
   - name: Clone GP from github
     ansible.builtin.git:
         repo: 'https://github.com/rmtteam/gp-deploy-developers-vm.git'
         dest: /usr/src/gp-deploy-developers-vm
 
-  - name: Run install lshell
-    shell:
-        "cd /usr/src/lshell &&  /usr/bin/python3 setup.py install --no-compile --install-scripts=/usr/bin/"
-
-
-  - name: Create directory /etc/lshell.d
-    file:
-        path: /etc/lshell.d
-        state: directory
-        owner: root
-        group: root
-        mode: 0775
-
-  - name: Create directory /var/log/lshell
-    file:
-        path: /var/log/lshell
-        state: directory
-        owner: root
-        group: root
-        mode: 0775
-
-  - name: Copy lshell config
-    shell:
-        "cp /usr/src/gp-deploy-developers-vm/lshell.conf /etc/lshell.conf"
-
-  - name: Copy lshell config
-    shell:
-        "cp /usr/src/gp-deploy-developers-vm/gp_allowed_commands.conf /etc/lshell.d/gp_allowed_commands.conf"
 
   - name: Add a group Developer
     group:
