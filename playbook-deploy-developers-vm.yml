@@ -56,7 +56,7 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-   - name: Copy config lshell
+   - name: Copy config
      copy:
         src: /usr/src/lshell/etc/lshell.conf
         dest: /etc/lshell.conf
