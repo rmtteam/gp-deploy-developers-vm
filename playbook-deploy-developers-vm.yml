@@ -86,3 +86,11 @@
         owner: developer
         group: developer
         state: link
+
+  - name: Create a symbolic link to rbash
+    file:
+        src: /usr/bin/rbash
+        dest: /home/developer/bin/rbash
+        owner: developer
+        group: developer
+        state: link
