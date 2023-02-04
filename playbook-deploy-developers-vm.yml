@@ -32,10 +32,13 @@
         name: ssh
         state: restarted
 
-  - name: Install lshell
+  - name: Clone lshell from github
     ansible.builtin.git:
         repo: 'https://github.com/ghantoos/lshell.git'
         dest: /usr/src/lshell
+
+  - name: Install lshell
+    ansible.builtin.shell: python /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/
 
   - name: Add a group Developer
     group:
