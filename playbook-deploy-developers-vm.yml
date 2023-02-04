@@ -39,8 +39,7 @@
 
   - name: Run install lshell
     shell:
-        "cd /usr/src/lshell"
-        "python3 setup.py install --no-compile --install-scripts=/usr/bin/"
+        "cd /usr/src/lshell &&  /use/bin/python3 setup.py install --no-compile --install-scripts=/usr/bin/"
 
   - name: Add a group Developer
     group:
