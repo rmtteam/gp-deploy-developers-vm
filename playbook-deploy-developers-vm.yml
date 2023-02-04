@@ -41,7 +41,7 @@
     ansible.builtin.copy:
         src: /lshell.sh
         dest: /usr/src/lshell.sh
-
+        
   #- name: Install lshell
   #  ansible.builtin.command: "python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
 
