@@ -39,7 +39,8 @@
 
   - name: Install lshell
     ansible.builtin.shell:
-        cmd: "python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
+    args:
+        executable: "python3 /usr/src/lshell/setup.py install --no-compile --install-scripts=/usr/bin/"
 
   - name: Add a group Developer
     group:
