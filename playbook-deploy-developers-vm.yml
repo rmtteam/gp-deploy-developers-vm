@@ -11,7 +11,7 @@
           - htop
           - mc
           - net-tools
-          - rssh
+          - mysecureshell
        state: latest
        update_cache: true
 
