@@ -11,7 +11,7 @@
           - htop
           - mc
           - net-tools
-          - restricted-ssh-commands
+          - rssh
        state: latest
        update_cache: true
 
