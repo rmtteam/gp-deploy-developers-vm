@@ -11,7 +11,6 @@
           - htop
           - mc
           - net-tools
-          - rssh
        state: latest
        update_cache: true
 
@@ -47,7 +46,7 @@
     user:
         name: developer
         password: $6$dZjGIVaxZmY7$lr8NX9BARnkklMWcgcXvZ4KHK7Oc4JHqxPAR./St7hEDv8lhwV7WtrguIfnJVwYsAh8jbj3K.xBu2GWGSxmX50
-        shell: /bin/rssh
+        shell: /bin/bash
         update_password: on_create
         groups: developer
         append: yes
