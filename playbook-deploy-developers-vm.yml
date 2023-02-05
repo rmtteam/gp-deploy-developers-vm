@@ -119,10 +119,10 @@
         group: developer
         state: link
 
-- name: Create a symbolic link to mc
-  file:
-      src: /usr/bin/mc
-      dest: /home/developer/bin/mc
-      owner: developer
-      group: developer
-      state: link
+  - name: Create a symbolic link to mc
+    file:
+        src: /usr/bin/mc
+        dest: /home/developer/bin/mc
+        owner: developer
+        group: developer
+        state: link
