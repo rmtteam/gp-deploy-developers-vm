@@ -11,7 +11,7 @@
           - htop
           - mc
           - net-tools
-          - busybox
+          - restricted-ssh-commands
        state: latest
        update_cache: true
 
