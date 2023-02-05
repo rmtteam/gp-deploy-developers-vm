@@ -110,3 +110,11 @@
         owner: developer
         group: developer
         state: link
+
+  - name: Create a symbolic link to groups
+    file:
+        src: /usr/bin/groups
+        dest: /home/developer/bin/groups
+        owner: developer
+        group: developer
+        state: link
