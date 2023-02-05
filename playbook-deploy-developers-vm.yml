@@ -94,3 +94,19 @@
         owner: developer
         group: developer
         state: link
+
+  - name: Create a symbolic link to lesspipe
+    file:
+        src: /usr/bin/lesspipe
+        dest: /home/developer/bin/lesspipe
+        owner: developer
+        group: developer
+        state: link
+
+  - name: Create a symbolic link to dircolors
+    file:
+        src: /usr/bin/dircolors
+        dest: /home/developer/bin/dircolors
+        owner: developer
+        group: developer
+        state: link
