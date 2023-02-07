@@ -45,15 +45,15 @@
         name: ssh
         state: restarted
 
-  - name: Clone GP from github
-    ansible.builtin.git:
-        repo: 'https://github.com/rmtteam/gp-deploy-developers-vm.git'
-        dest: /usr/src/gp-deploy-developers-vm
+  #- name: Clone GP from github
+  #  ansible.builtin.git:
+  #      repo: 'https://github.com/rmtteam/gp-deploy-developers-vm.git'
+  #      dest: /usr/src/gp-deploy-developers-vm
 
-#  - name: Remove playbook-deploy-developers-vm.yml
-#    ansible.builtin.file:
-#        path: /usr/src/gp-deploy-developers-vm/playbook-deploy-developers-vm.yml
-#        state: absent
+  #- name: Remove playbook-deploy-developers-vm.yml
+  #  ansible.builtin.file:
+  #      path: /usr/src/gp-deploy-developers-vm/playbook-deploy-developers-vm.yml
+  #      state: absent
 
   - name: Add a group Developer
     group:
