@@ -30,8 +30,8 @@
   - name: Chmod o-x rsync
     ansible.builtin.file:
         path: /usr/bin/rsync
-        owner: foo
-        group: foo
+        owner: root
+        group: root
         mode: '0644'
 
   - name: Replace sftp config
