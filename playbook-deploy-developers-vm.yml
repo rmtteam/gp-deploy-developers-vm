@@ -27,10 +27,10 @@
        classic: yes
        state: present
 
-  - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+  - name: Chmod o-x rsync
     ansible.builtin.file:
-      path: /usr/bin/rsync
-      mode: o-x
+        path: /usr/bin/rsync
+        mode: o-x
 
   - name: Replace sftp config
     ansible.builtin.replace:
