@@ -30,7 +30,9 @@
   - name: Chmod o-x rsync
     ansible.builtin.file:
         path: /usr/bin/rsync
-        mode: o-x
+        owner: foo
+        group: foo
+        mode: '0644'
 
   - name: Replace sftp config
     ansible.builtin.replace:
@@ -77,67 +79,3 @@
   #- name: Copy .bash_profile to home folder
   #  shell:
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
-
-  - name: Create a symbolic link to git
-    file:
-        src: /usr/bin/git
-        dest: /home/developer/bin/git
-        owner: developer
-        group: developer
-        state: link
-
-  - name: Create a symbolic link to uname
-    file:
-        src: /usr/bin/uname
-        dest: /home/developer/bin/uname
-        owner: developer
-        group: developer
-        state: link
-
-  - name: Create a symbolic link to echo
-    file:
-        src: /usr/bin/echo
-        dest: /home/developer/bin/echo
-        owner: developer
-        group: developer
-        state: link
-
-  - name: Create a symbolic link to rbash
-    file:
-        src: /usr/bin/rbash
-        dest: /home/developer/bin/rbash
-        owner: developer
-        group: developer
-        state: link
-
-  - name: Create a symbolic link to lesspipe
-    file:
-        src: /usr/bin/lesspipe
-        dest: /home/developer/bin/lesspipe
-        owner: developer
-        group: developer
-        state: link
-
-  - name: Create a symbolic link to dircolors
-    file:
-        src: /usr/bin/dircolors
-        dest: /home/developer/bin/dircolors
-        owner: developer
-        group: developer
-        state: link
-
-  - name: Create a symbolic link to groups
-    file:
-        src: /usr/bin/groups
-        dest: /home/developer/bin/groups
-        owner: developer
-        group: developer
-        state: link
-
-  - name: Create a symbolic link to mc
-    file:
-        src: /usr/bin/mc
-        dest: /home/developer/bin/mc
-        owner: developer
-        group: developer
-        state: link
