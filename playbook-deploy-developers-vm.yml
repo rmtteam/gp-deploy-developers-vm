@@ -17,6 +17,7 @@
           - htop
           - mc
           - net-tools
+          - libc6
        state: latest
        update_cache: true
 
