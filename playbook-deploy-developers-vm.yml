@@ -28,6 +28,13 @@
        classic: yes
        state: present
 
+  - name: Install DotNetCore 6.0
+    ansible.builtin.snap:
+       name: dotnet-sdk
+       channel: 6.0
+       classic: yes
+       state: present
+
   - name: Chmod o-x rsync
     ansible.builtin.file:
         path: /usr/bin/rsync
