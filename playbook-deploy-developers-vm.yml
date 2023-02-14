@@ -23,16 +23,23 @@
           - htop
           - mc
           - net-tools
+          - libc6
        state: latest
        update_cache: true
 
-  - name: Install DotNet SDK
+  - name: Install DotNet SDK 6.0
     ansible.builtin.apt:
        name:
-          - libc6
           - dotnet-sdk-6.0
        state: latest
        update_cache: true
+
+- name: Install DotNet SDK 5.0
+  ansible.builtin.apt:
+     name:
+        - dotnet-sdk-5.0
+     state: latest
+     update_cache: true
 
   #- name: Install DotNetCore 5.0
   #  ansible.builtin.snap:
