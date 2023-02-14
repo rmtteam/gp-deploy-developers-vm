@@ -36,8 +36,8 @@
 
    - name: Download packages-microsoft-prod
      ansible.builtin.get_url:
-       url: https://packages.microsoft.com/config/ubuntu/22.10/packages-microsoft-prod.deb
-       dest: /usr/src/packages-microsoft-prod.deb
+       url: "https://packages.microsoft.com/config/ubuntu/22.10/packages-microsoft-prod.deb"
+       dest: "/usr/src/packages-microsoft-prod.deb"
        mode: '0440'
 
   #- name: Install DotNetCore 6.0
