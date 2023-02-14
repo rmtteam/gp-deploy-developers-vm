@@ -40,6 +40,10 @@
       dest: "/usr/src/packages-microsoft-prod.deb"
       mode: '0440'
 
+  - name: Install a .deb package
+    ansible.builtin.apt:
+      deb: /usr/src/packages-microsoft-prod.deb
+
   #- name: Install DotNetCore 6.0
   #  ansible.builtin.snap:
   #     name: dotnet-sdk
