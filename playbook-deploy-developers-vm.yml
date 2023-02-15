@@ -42,6 +42,8 @@
     snap:
        name: dotnet-sdk
        channel: 5.0
+       classic: yes
+       state: present
 
   #- name: Install dotnet-sdk-5.0
   #  ansible.builtin.apt:
