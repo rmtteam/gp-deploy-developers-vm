@@ -66,10 +66,14 @@
     ansible.builtin.apt:
       deb: /usr/src/packages-microsoft-prod.deb
 
-  - name: Install dotnet-sdk-5.0
-    ansible.builtin.apt:
-       name:
-          - dotnet-sdk-5.0
+  - name: Copy .bash_profile to home folder
+    shell:
+          "apt -t focal install dotnet-sdk-5.0"
+
+  #- name: Install dotnet-sdk-5.0
+  #  ansible.builtin.apt:
+  #     name:
+  #        - dotnet-sdk-5.0
 
 #
 # Service config
