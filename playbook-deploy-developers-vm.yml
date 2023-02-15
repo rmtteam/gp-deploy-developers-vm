@@ -62,7 +62,7 @@
       update_cache: true
 
   - name: Return motd to registered var
-    ansible.builtin.command: "apt -t focal install dotnet-sdk-5.0"
+    shell: "apt -t focal install dotnet-sdk-5.0"
 
   #- name: Install DotNet SDK 6.0
   #  ansible.builtin.apt:
