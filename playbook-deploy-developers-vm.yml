@@ -38,13 +38,6 @@
        state: latest
        update_cache: true
 
-  - name: Install DotNet SDK 5.0
-    ansible.builtin.apt:
-       name:
-          - dotnet-sdk-5.0
-       state: latest
-       update_cache: true
-
   - name: Chmod o-x rsync
     ansible.builtin.file:
         path: /usr/bin/rsync
