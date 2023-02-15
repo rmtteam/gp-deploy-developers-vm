@@ -38,12 +38,15 @@
        state: latest
        update_cache: true
 
-  - name: Download packages-microsoft-prod.deb
+  - name: Download libss
     ansible.builtin.get_url:
-      url: "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb"
-      dest: "/usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb"
+      url: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+      dest: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
       mode: '0440'
 
+  - name: Install libss
+    ansible.builtin.apt:
+      deb: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 
 #
 # Service config
