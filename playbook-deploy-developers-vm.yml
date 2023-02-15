@@ -31,19 +31,19 @@
        state: latest
        update_cache: true
 
-  - name: Install DotNet SDK 6.0
-    ansible.builtin.apt:
-       name:
-          - dotnet-sdk-6.0
-       state: latest
-       update_cache: true
+  #- name: Install DotNet SDK 6.0
+  #  ansible.builtin.apt:
+  #     name:
+  #        - dotnet-sdk-6.0
+  #     state: latest
+  #     update_cache: true
 
-  - name: Install dotnet-sdk 5.0
-    snap:
-       name: dotnet-sdk
-       channel: 5.0
-       classic: yes
-       state: present
+  #- name: Install dotnet-sdk 5.0
+  #  snap:
+  #     name: dotnet-sdk
+  #     channel: 5.0
+  #     classic: yes
+  #     state: present
 
   #- name: Install dotnet-sdk-5.0
   #  ansible.builtin.apt:
