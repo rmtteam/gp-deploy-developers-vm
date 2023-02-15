@@ -52,11 +52,6 @@
     ansible.builtin.apt:
       deb: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 
-  - name: Install some system tools
-    ansible.builtin.apt:
-       name:
-          - dotnet-sdk-5.0
-
 #
 # Dotnet
 #
@@ -71,7 +66,10 @@
     ansible.builtin.apt:
       deb: /usr/src/packages-microsoft-prod.deb
 
-
+  - name: Install dotnet-sdk-5.0
+    ansible.builtin.apt:
+       name:
+          - dotnet-sdk-5.0
 
 #
 # Service config
