@@ -38,6 +38,11 @@
        state: latest
        update_cache: true
 
+  - name: Install dotnet-sdk 5.0
+    snap:
+       name: dotnet-sdk
+       channel: 5.0
+
   #- name: Install dotnet-sdk-5.0
   #  ansible.builtin.apt:
   #     name:
