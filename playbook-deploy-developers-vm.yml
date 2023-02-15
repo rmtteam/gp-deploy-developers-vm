@@ -65,6 +65,9 @@
   - name: Install packages-microsoft-prod
     ansible.builtin.apt:
       deb: /usr/src/packages-microsoft-prod.deb
+      state: latest
+      update_cache: true
+
 
   #- name: apt -t focal install dotnet-sdk-5.0
   #  shell:
