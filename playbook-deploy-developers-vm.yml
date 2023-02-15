@@ -24,6 +24,11 @@
           - mc
           - net-tools
           - libc6
+          - libgcc1
+          - libgssapi-krb5-2
+          - libicu66
+          - libstdc++6
+          - zlib1g
        state: latest
        update_cache: true
 
