@@ -38,15 +38,29 @@
        state: latest
        update_cache: true
 
-  - name: Download libss
+#
+# Libssl
+#
+
+  - name: Download libssl
     ansible.builtin.get_url:
       url: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
       dest: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
       mode: '0440'
 
-  - name: Install libss
+  - name: Install libssl
     ansible.builtin.apt:
       deb: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+
+#
+# Dotnet
+#
+
+  - name: Download packages-microsoft-prod
+    ansible.builtin.get_url:
+      url: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+      dest: /usr/src/packages-microsoft-prod.deb
+      mode: '0440'
 
 #
 # Service config
@@ -71,7 +85,7 @@
         state: restarted
 
 #
-# Add user
+# User
 #
 
   - name: Add a group Developer
@@ -89,11 +103,11 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-  - name: Create a directory /bin
-    file:
-        path: /home/developer/bin
-        state: directory
-        mode: '0755'
+  #- name: Create a directory /bin
+  #  file:
+  #      path: /home/developer/bin
+  #      state: directory
+  #      mode: '0755'
 
 
   #- name: Copy .bash_profile to home folder
