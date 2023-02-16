@@ -56,7 +56,7 @@
 
   - name: Download Microsoft package repository
     get_url:
-      url: "https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb"
+      url: "https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb"
       dest: "/tmp/packages-microsoft-prod.deb"
       mode: '0644'
       #checksum: 'sha256:10cadd1e8b0136beae0336ce018b7e076335d9b3fb3c3fa3d4cf4b22c87fc4ca'
