@@ -35,15 +35,15 @@
 # Libssl
 #
 
-  - name: Download libssl
-    ansible.builtin.get_url:
-      url: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
-      dest: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
-      mode: '0440'
+  #- name: Download libssl
+  #  ansible.builtin.get_url:
+  #    url: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+  #    dest: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+  #    mode: '0440'
 
-  - name: Install libssl
-    ansible.builtin.apt:
-      deb: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+  #- name: Install libssl
+  #  ansible.builtin.apt:
+  #    deb: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 
   - name: Install prerequisites
     apt:
