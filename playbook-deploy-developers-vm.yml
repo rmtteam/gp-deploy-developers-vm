@@ -46,7 +46,7 @@
       deb: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 
 #
-# Dotnet
+# Install Dotnet
 #
 
   - name: Download packages-microsoft-prod
@@ -61,11 +61,11 @@
       state: present
       update_cache: true
 
-  - name: apt -t focal install -y dotnet-sdk-5.0
+  - name: Install dotnet-sdk-5.0
     shell: "apt -t focal install -y dotnet-sdk-5.0"
 
-  - name: apt -t focal install -y dotnet-sdk-6.0
-    shell: "apt -t focal install -y dotnet-sdk-6.0"  
+  - name: Install dotnet-sdk-6.0
+    shell: "apt -t focal install -y dotnet-sdk-6.0"
 
   #- name: Install DotNet SDK 6.0
   #  ansible.builtin.apt:
