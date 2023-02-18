@@ -162,6 +162,12 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
+  - name: Copy .bash_profile to home folder
+    shell:
+          "chage --lastday 0 developer"
+
+#  shell:
+
   #- name: Create a directory /bin
   #  file:
   #      path: /home/developer/bin
