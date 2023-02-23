@@ -143,6 +143,11 @@
         name: ssh
         state: restarted
 
+  - name: Creating a file with content
+    copy:
+      dest: "etc/sysctl.d/fs.conf"
+      content: "fs.inotify.max_user_watches = 524288"
+
 #
 # User
 #
