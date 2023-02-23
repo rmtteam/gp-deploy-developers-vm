@@ -167,13 +167,13 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-  - name: Allow reboot for developer
-    community.general.sudoers:
-        name: developer
-        state: present
-        user: developer
-        runas: alice
-        commands: reboot
+  #- name: Allow reboot for developer
+  #  community.general.sudoers:
+  #      name: developer
+  #      state: present
+  #      user: developer
+  #      runas: alice
+  #      commands: reboot
 
   #- name: Request for change password
   #  shell:
