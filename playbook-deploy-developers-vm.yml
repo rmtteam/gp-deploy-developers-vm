@@ -167,7 +167,7 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-  - name: Allow reboot for developer
+  - name: Allow reboot for Developer
     community.general.sudoers:
         name: developer
         state: present
