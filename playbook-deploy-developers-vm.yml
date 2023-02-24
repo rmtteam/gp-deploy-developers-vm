@@ -167,10 +167,10 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-  - name: Make reboot for developer
-    copy:
-      dest: "/etc/sudoers.d/developer"
-      content: "" 
+  #- name: Make reboot for developer
+    #copy:
+      #dest: "/etc/sudoers.d/developer"
+      #content: ""
       #content: "developer ALL=NOPASSWD: /sbin/reboot"
 
 
