@@ -143,7 +143,7 @@
         name: ssh
         state: restarted
 
-  - name: Creating a file with content
+  - name: Creating /etc/sysctl.d/fs.conf
     copy:
       dest: "/etc/sysctl.d/fs.conf"
       content: "fs.inotify.max_user_watches = 524288"
@@ -167,13 +167,11 @@
         append: yes
         # mkpasswd --method=sha-512 LvHgB7l5XQ8K
 
-  - name: Allow reboot for Developer
-    community.general.sudoers:
-        name: developer
-        state: present
-        user: developer
-        runas: alice
-        commands: reboot
+  - name: Make reboot for developer
+    copy:
+      dest: "/etc/sudoers.d/developer"
+      content: "developer ALL=NOPASSWD: /sbin/reboot"
+
 
   #- name: Request for change password
   #  shell:
