@@ -170,7 +170,8 @@
   - name: Make reboot for developer
     copy:
       dest: "/etc/sudoers.d/developer"
-      content: "developer ALL=NOPASSWD: /sbin/reboot"
+      content: "" 
+      #content: "developer ALL=NOPASSWD: /sbin/reboot"
 
 
   #- name: Request for change password
