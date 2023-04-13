@@ -70,10 +70,10 @@
     apt:
       update_cache: yes
 
-  #- name: Install .NET 5 SDK
-  #  apt:
-  #    name: dotnet-sdk-5.0
-  #    state: present
+  - name: Install .NET 5 SDK
+    apt:
+      name: dotnet-sdk-5.0
+      state: present
 
   - name: Install .NET 6 SDK
     apt:
