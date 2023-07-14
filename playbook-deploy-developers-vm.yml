@@ -81,7 +81,7 @@
       state: present
 
   - name: Add NodeSoure repo
-    shell: curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    shell: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 
   - name: Update apt cache
     apt:
