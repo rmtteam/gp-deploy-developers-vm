@@ -80,17 +80,17 @@
       name: dotnet-sdk-6.0
       state: present
 
-  - name: Add NodeSource repository
-    apt_repository:
-      repo: "deb https://deb.nodesource.com/setup_19.x {{ ansible_distribution_release }} main"
-      state: present
-      update_cache: yes
-      filename: nodesource
+  - name: Add NodeSoure repo
+    shell: curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
-  - name: Install Node.js
+  - name: Update apt cache
+    apt:
+      update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+  - name: Install Node
     apt:
       name: nodejs
-      state: present
+      update_cache: yes
 
   - name: Install build-essential
     apt:
