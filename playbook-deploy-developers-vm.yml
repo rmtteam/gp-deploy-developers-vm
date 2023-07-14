@@ -80,6 +80,23 @@
       name: dotnet-sdk-6.0
       state: present
 
+  - name: Add NodeSource repository
+    apt_repository:
+      repo: "deb https://deb.nodesource.com/node_14.x {{ ansible_distribution_release }} main"
+      state: present
+      update_cache: yes
+      filename: nodesource
+
+  - name: Install Node.js
+    apt:
+      name: nodejs
+      state: present
+
+  - name: Install build-essential
+    apt:
+      name: build-essential
+      state: present
+
 
 #
 # Install Dotnet
