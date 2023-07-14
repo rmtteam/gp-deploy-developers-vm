@@ -82,7 +82,7 @@
 
   - name: Add NodeSource repository
     apt_repository:
-      repo: "deb https://deb.nodesource.com/node_14.x {{ ansible_distribution_release }} main"
+      repo: "deb https://deb.nodesource.com/setup_19.x {{ ansible_distribution_release }} main"
       state: present
       update_cache: yes
       filename: nodesource
