@@ -197,16 +197,9 @@
   #  shell:
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
 
-  - name: Download NVM install.sh
+  - name: Install nvm
     become_user: developer
-    get_url:
-      url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
-      dest: "/home/developer/install.sh"
-      mode: '0755'
-
-  - name: Run NVM install.sh with bash
-    become_user: developer
-    shell: >
-      bash "/home/developer/install.sh"
+    ansible.builtin.shell: >
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     args:
-      executable: /bin/bash
+      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
