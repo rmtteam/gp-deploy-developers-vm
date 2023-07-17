@@ -201,12 +201,12 @@
     become_user: developer
     get_url:
       url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
-      dest: "{{ ansible_env.HOME }}/install.sh"
+      dest: "/home/developer/install.sh"
       mode: '0755'
 
   - name: Run NVM install.sh with bash
     become_user: developer
     shell: >
-      bash "{{ ansible_env.HOME }}/install.sh"
+      bash "/home/developer/install.sh"
     args:
       executable: /bin/bash
