@@ -87,6 +87,15 @@
       name: nodejs
       update_cache: yes
 
+  - name: Install NVM
+    shell: |
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+      source ~/.bashrc
+    become: true
+    args:
+      executable: /bin/bash
+
+
 #
 # Install Dotnet
 #
@@ -196,12 +205,3 @@
   #- name: Copy .bash_profile to home folder
   #  shell:
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
-
-  - name: Install NVM
-    shell: |
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-      source ~/.bashrc
-    become: true
-    become_user: developer
-    args:
-      executable: /bin/bash
