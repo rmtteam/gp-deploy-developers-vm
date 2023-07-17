@@ -198,10 +198,15 @@
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
 
 # NVM https://github.com/morgangraphics/ansible-role-nvm
-  roles:
 
+  roles:
     - role: ansible-role-nvm
+      nodejs_version: "8.16.0"
+      nvm_install: "curl"
+      nvm_version: "0.34.0"
       nvm_profile: "/home/developer/.bashrc"
-      become: true
-      become_user: developer
-      nodejs_version: "8.15.0"
+      nvm_dir: "/home/developer"
+      nvm_commands:
+       - "nvm install 8.16.0"
+       - "nvm alias default 8.16.0"
+       - "nvm exec default npm install"
