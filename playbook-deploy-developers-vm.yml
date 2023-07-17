@@ -201,6 +201,7 @@
   roles:
 
     - role: ansible-role-nvm
+      nvm_profile: "/home/developer/.bashrc"
       become: true
       become_user: developer
       nodejs_version: "8.15.0"
