@@ -87,16 +87,6 @@
       name: nodejs
       update_cache: yes
 
-  - name: Install nvm
-    sudo: yes
-    become: true
-    become_user: developer
-    shell: >
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-    args:
-      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-
-
 #
 # Install Dotnet
 #
@@ -206,3 +196,11 @@
   #- name: Copy .bash_profile to home folder
   #  shell:
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
+
+  - name: Install nvm
+    become: true
+    become_user: developer
+    shell: >
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+    args:
+      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
