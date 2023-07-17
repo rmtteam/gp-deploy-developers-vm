@@ -28,6 +28,10 @@
           - libgssapi-krb5-2
           - libstdc++6
           - zlib1g
+          - curl
+          - wget
+          - gnupg2
+          - build-essential
        state: latest
        update_cache: true
 
@@ -44,15 +48,6 @@
   #- name: Install libssl
   #  ansible.builtin.apt:
   #    deb: /usr/src/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
-
-  - name: Install prerequisites
-    apt:
-      name: "{{ item }}"
-      state: present
-    with_items:
-      - curl
-      - wget
-      - gnupg2
 
   - name: Download Microsoft package repository
     get_url:
@@ -91,12 +86,6 @@
     apt:
       name: nodejs
       update_cache: yes
-
-  - name: Install build-essential
-    apt:
-      name: build-essential
-      state: present
-
 
 #
 # Install Dotnet
