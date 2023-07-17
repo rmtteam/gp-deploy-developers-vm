@@ -75,17 +75,17 @@
       name: dotnet-sdk-6.0
       state: present
 
-  - name: Add NodeSoure repo
-    shell: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+#  - name: Add NodeSoure repo
+#    shell: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 
-  - name: Update apt cache
-    apt:
-      update_cache=yes force_apt_get=yes cache_valid_time=3600
+#  - name: Update apt cache
+#    apt:
+#      update_cache=yes force_apt_get=yes cache_valid_time=3600
 
-  - name: Install Node
-    apt:
-      name: nodejs
-      update_cache: yes
+#  - name: Install Node
+#    apt:
+#      name: nodejs
+#      update_cache: yes
 
 #
 # Install Dotnet
@@ -196,17 +196,3 @@
   #- name: Copy .bash_profile to home folder
   #  shell:
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
-
-# NVM https://github.com/morgangraphics/ansible-role-nvm
-
-  roles:
-    - role: ansible-role-nvm
-      nodejs_version: "8.16.0"
-      nvm_install: "curl"
-      nvm_version: "0.34.0"
-      nvm_profile: "/home/developer/.bashrc"
-      nvm_dir: "/home/developer"
-      nvm_commands:
-       - "nvm install 8.16.0"
-       - "nvm alias default 8.16.0"
-       - "nvm exec default npm install"
