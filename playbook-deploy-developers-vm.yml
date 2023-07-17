@@ -197,9 +197,6 @@
   #  shell:
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
 
-  - name: Install nvm
-    become_user: developer
-    ansible.builtin.shell: >
-      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-    args:
-      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+# NVM https://github.com/morgangraphics/ansible-role-nvm
+  roles:
+    - { role: nvm, tags: ["nvm"] }
