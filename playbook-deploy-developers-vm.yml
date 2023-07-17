@@ -199,5 +199,7 @@
 
 # NVM https://github.com/morgangraphics/ansible-role-nvm
   roles:
+      become: true
+      become_user: developer
     - role: ansible-role-nvm
       nodejs_version: "8.15.0"
