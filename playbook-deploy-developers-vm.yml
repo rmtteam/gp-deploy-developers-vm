@@ -3,7 +3,28 @@
   hosts: all
   become: yes
 
+  vars:
+    sysctl_settings:
+      fs.file-max: 1000000
+      fs.inotify.max_user_watches: 16777216
+      kernel.core_uses_pid: 1
+      kernel.msgmax: 8192
+      kernel.msgmnb: 16384
+      net.core.somaxconn: 65535
+      net.core.netdev_max_backlog: 16384
+      net.ipv4.ip_forward: 0
+      net.ipv4.conf.all.accept_redirects: 1
+      net.ipv4.conf.default.accept_redirects: 0
+      net.ipv4.tcp_syncookies: 0
+      net.ipv4.tcp_timestamps: 0
+
   tasks:
+
+  - name: set sysctl settings
+    sysctl: sysctl_set=yes reload=yes state=present
+      name="{{ item.key }}"
+      value="{{ item.value }}"
+    with_dict: "{{ sysctl_settings }}"
 
   #- name: Run apt upgrade
   #  apt:
@@ -196,9 +217,3 @@
   #- name: Copy .bash_profile to home folder
   #  shell:
   #        "cp /usr/src/gp-deploy-developers-vm/.bash_profile /home/developer/.bash_profile"
-
-    - name: Download and install NVM
-      ansible.builtin.command: >
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-      args:
-        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
