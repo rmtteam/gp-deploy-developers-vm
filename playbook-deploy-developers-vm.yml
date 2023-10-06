@@ -26,10 +26,10 @@
       value="{{ item.value }}"
     with_dict: "{{ sysctl_settings }}"
 
-- name: Remove file APT
-  ansible.builtin.file:
-    path: /etc/apt/sources.list
-    state: absent
+  - name: Remove file APT
+    ansible.builtin.file:
+      path: /etc/apt/sources.list
+      state: absent
 
   #- name: Run apt upgrade
   #  apt:
