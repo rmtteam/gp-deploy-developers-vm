@@ -167,7 +167,7 @@
   - name: Replace sftp config
     ansible.builtin.replace:
         path: /etc/ssh/sshd_config
-        regexp: '(^Subsystem sftp\s)(.*)$'
+        regexp: '(^Subsystem       sftp\s)(.*)$'
         replace: 'Subsystem sftp internal-sftp -P read, remove'
 
   - name: Restart sshd
