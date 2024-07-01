@@ -34,9 +34,12 @@
 
   - name: Add universe repository into sources list
     apt_repository:
-      repo: deb http://ru.archive.ubuntu.com/ubuntu $(lsb_release -sc) universe
+      repo: 'deb http://ru.archive.ubuntu.com/ubuntu $(lsb_release -sc) universe'
       state: present
-      update_cache: yes
+  
+  - name: Update APT cache
+    apt:
+    update_cache: yes
 
   - name: Install some system tools
     ansible.builtin.apt:
