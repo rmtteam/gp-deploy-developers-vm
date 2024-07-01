@@ -36,12 +36,7 @@
     apt_repository:
       repo: deb http://ru.archive.ubuntu.com/ubuntu $(lsb_release -sc) universe
       state: present
-
-  - name: Run apt upgrade
-    apt:
-      upgrade: "yes"
       update_cache: yes
-      cache_valid_time: 432000
 
   - name: Install some system tools
     ansible.builtin.apt:
