@@ -32,10 +32,10 @@
   #    state: absent
 
 
-  - name: Add universe repository into sources list
-    apt_repository:
-      repo: 'deb http://ru.archive.ubuntu.com/ubuntu $(lsb_release -sc) universe'
-      state: present
+  #- name: Add universe repository into sources list
+  #  apt_repository:
+  #    repo: 'deb http://ru.archive.ubuntu.com/ubuntu $(lsb_release -sc) universe'
+  #    state: present
   
   - name: Update APT cache
     apt:
