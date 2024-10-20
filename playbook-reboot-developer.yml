@@ -1,0 +1,10 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Ensure user developer can reboot without password
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^developer'
+        line: 'developer ALL=(ALL) NOPASSWD: /sbin/reboot'
+        validate: '/usr/sbin/visudo -cf %s'
